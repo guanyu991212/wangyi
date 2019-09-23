@@ -14,8 +14,8 @@
 
     <a href="javascript:;" 
     class="footer_item" 
-    :class="{'on':$route.path==='/class'}"
-    @click="goto('/class')"
+    :class="{'on':$route.path==='/class/classr'}"
+    @click="goto('/class/classr')"
     >
       <span class="Item_icon">
         <i class="iconfont icon-chuangtougui"></i>

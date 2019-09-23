@@ -1,15 +1,16 @@
 <template>
   <div>
-    <header class="header">
+    <!-- <slot name="person-header"></slot> -->
+    <!-- <header class="header">
       <div class="person">
-         <i class=" home iconfont icon-shouye" ></i>
+         <i class=" home iconfont icon-shouye" @click="goMain" ></i>
         <a href="javascript:;" class="logo" >网易严选</a>
 
         <i class=" photo iconfont icon-19" ></i>
         <i class=" shops iconfont icon-gouwuche" ></i>
       </div>
-    </header>
-
+    </header> -->
+    <PersonHeader></PersonHeader>
 
     <div class="main">
 
@@ -18,8 +19,8 @@
       </div>
       <div class="main-down">
 
-        <div class="phonelogin">手机号快捷登录</div>
-        <div class="emaillogin">邮箱账号登录</div>
+        <div class="phonelogin" @click="phoneLogin">手机号快捷登录</div>
+        <div class="emaillogin" @click="emailLogin">邮箱账号登录</div>
       </div>
 
       <div class="foot">
@@ -32,42 +33,55 @@
   </div>
 </template>
 <script>
-
+import PersonHeader from '../../components/Person-Header/Person-Header'
 export default {
+  components:{
+    PersonHeader
+  },
+
+  methods: {
+    phoneLogin(){
+      this.$router.push('/phone')
+    },
+    emailLogin(){
+      this.$router.push('/email')
+    }
+  },
+  
 
 }
 </script>
 <style lang='stylus' rel='stylesheet/>stylus'>
-.header
-  height 100%
-  width 100%
-  position relative
-  padding 0.21333rem 0.4rem
-  box-sizing border-box
-  background rgb(250, 250, 250)
-  z-index 100
-  margin: 0 auto;
-  overflow: hidden;
-  text-align center
-  .person
-    width 100%
-    height 100%
-    display inline-block 
-    .home
-     font-size 24px
-     float left
-    .shops
-      font-size 30px
-      width 30px
-      height 30px
-      float right
-    .photo
-      font-size 30px
-      position absolute
-      top 7px
-      right 56px
-    .logo
-      font-size 24px
+// .header
+//   height 100%
+//   width 100%
+//   position relative
+//   padding 0.21333rem 0.4rem
+//   box-sizing border-box
+//   background rgb(250, 250, 250)
+//   z-index 100
+//   margin: 0 auto;
+//   overflow: hidden;
+//   text-align center
+//   .person
+//     width 100%
+//     height 100%
+//     display inline-block 
+//     .home
+//      font-size 24px
+//      float left
+//     .shops
+//       font-size 30px
+//       width 30px
+//       height 30px
+//       float right
+//     .photo
+//       font-size 30px
+//       position absolute
+//       top 7px
+//       right 56px
+//     .logo
+//       font-size 24px
 .main
   width 100%
   height 100%

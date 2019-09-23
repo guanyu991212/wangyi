@@ -54,8 +54,7 @@ export default {
 }
 </script>
 <style lang='stylus' rel='stylesheet/>stylus'>
-body
-  background rgb(238, 238, 238)
+
 .util 
   background white
   padding-top 10px
@@ -102,6 +101,9 @@ body
   zoom: 1;
   padding-right 5px
   padding-top 5px
+  position relative
+  top 0
+  left 13px
   .item
     float left
     padding 0 .2rem

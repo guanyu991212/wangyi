@@ -1,0 +1,220 @@
+{
+  "goods":{
+    "list":["推荐","家居生活","服饰鞋包","美食酒水","个户清净","母婴亲子","运动旅行","数码家电","全球特色"],
+    "item":[
+      {
+        "title":"新品首发",
+        "img": "https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png"
+      },
+      {
+        "title": "家居生活",
+        "img": "https://yanxuan.nosdn.127.net/fede8b110c502ec5799702d5ec824792.png"
+      },
+      {
+         "title": "服饰鞋包",
+         "img": "https://yanxuan.nosdn.127.net/896a3beac514ae8f40aafe028e5fec56.png"
+      },
+      {
+         "title": "美食酒水",
+         "img": "https://yanxuan.nosdn.127.net/37520d1204a0c55474021b43dac2a69e.png"
+      },
+      {
+         "title": "个户清洁",
+         "img": "https://yanxuan.nosdn.127.net/6c3bd9d885c818b1f73e497335a68b47.png"
+      },
+      {
+        "title": "母婴亲子",
+        "img": "https://yanxuan.nosdn.127.net/559d2a240ec20b096590a902217009ff.png"
+      },
+      {
+        "title": "运动旅行",
+        "img": "https://yanxuan.nosdn.127.net/5c088559ebcc3f0ffcda663f04dfbeb2.png"
+      },
+      {
+        "title": "数码家电",
+        "img": "https://yanxuan.nosdn.127.net/fbca8e1f2948f0c09fc7672c2c125384.png"
+      },
+      {
+        "title": "全球特色",
+        "img": "https://yanxuan.nosdn.127.net/f7281169d4e82d5d8d52aa1fec83fe01.png"
+      },
+      {
+        "title": "好货差地",
+        "img": "https://yanxuan.nosdn.127.net/12e8efd15b9b210ab156a7ee9b340548.gif"
+      }
+    ]
+  
+  },
+  "categorys":[
+    {
+      "name":"推荐专区",
+      "navs" :[
+        "image","image2"
+      ],
+      "list" :[
+        {
+          "title":"精选美食",
+          "img": "https://yanxuan.nosdn.127.net/a91deb0e8592ea6c5e402d71eadc6a64.png?imageView&quality=85&thumbnail=144x144"
+        },
+        {
+          "title":"员工好货",
+          "img": "https://yanxuan.nosdn.127.net/c117ea2f1c4d978eb1f310d6d9ec3226.png?imageView&quality=85&thumbnail=144x144"
+        },
+        {
+          "title":"那幢级",
+          "img": "https://yanxuan.nosdn.127.net/3e52cf9e7db8ff6eb442b83043ae44ce.png?imageView&quality=85&thumbnail=144x144"
+        },
+        {
+          "title":"女装季",
+          "img": "https://yanxuan.nosdn.127.net/fcbe22542c091f31d6a22a7e921edc8f.png?imageView&quality=85&thumbnail=144x144"
+        }
+      ]
+    },
+    {
+      "name":"换季专区",
+      "navs": ["https://yanxuan.nosdn.127.net/c7de7e8850dc05df6943a1a39dce2558.jpg?imageView&thumbnail=0x196"],
+      "list" :[
+        {
+          "title":"滋补美食",
+          "img": "https://yanxuan.nosdn.127.net/15a0f224de139e533a01d61dade82f5f.png?imageView&quality=85&thumbnail=144x144"
+        },
+        {
+          "title":"日用换新",
+          "img": "https://yanxuan.nosdn.127.net/8b20393c8220b369e59ffe0e45f9696e.png?imageView&quality=85&thumbnail=144x144"
+        },
+        {
+          "title":"换季收纳",
+          "img": "https://yanxuan.nosdn.127.net/6cdb22d7d21269fc60dd87d77e6981e8.png?imageView&quality=85&thumbnail=144x144"
+        },
+        {
+          "title":"早秋穿品",
+          "img": "https://yanxuan.nosdn.127.net/1fc252460ad0eb59bde2c761e8ab9342.png?imageView&quality=85&thumbnail=144x144"
+        },
+        {
+          "title":"补水护肤",
+          "img": "https://yanxuan.nosdn.127.net/160274883e15e024802d25832f0e7ed1.png?imageView&quality=85&thumbnail=144x144"
+        }
+      ]
+    },
+    {
+      "name":"爆品专区",
+      "navs" :[],
+      "list" :[
+        {
+          "title":"家居生活",
+          "img" : ""
+        },
+        {
+          "title":"服饰鞋包",
+          "img" : ""
+        },
+        {
+          "title":"美食酒水",
+          "img" : ""
+        },
+        {
+          "title":"个户清洁",
+          "img" : ""
+        },
+        {
+          "title":"运动旅行",
+          "img" : ""
+        },
+        {
+          "title":"周边特色",
+          "img" : ""
+        }
+      ]
+    },
+    {
+      "name":"新品专区",
+      "navs" :[],
+      "list" :[
+        {
+          "title":"明星商品",
+          "img" : ""
+        }
+      ]
+    },
+    {
+      "name":"家居生活",
+      "navs" :[],
+      "list" :[
+        {
+          "title":"明星商品",
+          "img" : ""
+        }
+      ]
+    },
+    {
+      "name":"服饰鞋包",
+      "navs" :[],
+      "list" :[
+        {
+          "title":"明星商品",
+          "img" : ""
+        }
+      ]
+    },
+    {
+      "name":"美食酒水",
+      "navs" :[],
+      "list" :[
+        {
+          "title":"明星商品",
+          "img" : ""
+        }
+      ]
+    },
+    {
+      "name":"个户清洁",
+      "navs" :[],
+      "list" :[
+        {
+          "title":"明星商品",
+          "img" : ""
+        }
+      ]
+    },
+    {
+      "name":"母婴亲子",
+      "navs" :[],
+      "list" :[
+        {
+          "title":"明星商品",
+          "img" : ""
+        }
+      ]
+    },
+    {
+      "name":"运动旅行",
+      "navs" :[],
+      "list" :[
+        {
+          "title":"明星商品",
+          "img" : ""
+        }
+      ]
+    },
+    {
+      "name":"数码家电",
+      "navs" :[],
+      "list" :[
+        {
+          "title":"明星商品",
+          "img" : ""
+        }
+      ]
+    },
+    {
+      "name":"全球特色",
+      "navs" :[],
+      "list" :[
+        {
+          "title":"明星商品",
+          "img" : ""
+        }
+      ]
+    }
+  ]
+}

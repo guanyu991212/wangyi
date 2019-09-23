@@ -1,8 +1,8 @@
 <template>
   <div>
-    <Header >
+    <Header>
       <a href="javascript:;" class="logo" slot="Header-left">网易严选</a>
-      <div class="search" slot="Header-content" @click="isCloseSearch">
+      <div class="search" slot="Header-content" @click="goSearch">
         <i>
           <img
             src="../../../static/images/hxm_yanxuan-wap_p_20161201_style_img_icon-normal_search2-553dba3aff.png"
@@ -10,9 +10,10 @@
         </i>
         <span>搜索商品，共22673款好物</span>
       </div>
-      <button class="btn" slot="Header-right">登录</button>
+      <button class="btn" slot="Header-right" @click="goLogin">登录</button>
     </Header>
-    <MsiteNav></MsiteNav>
+    <!-- <MsiteNav :isShowList="isShowList" v-if="isShowList"></MsiteNav> -->
+    <Shelter ></Shelter>
     <div class="main">
       <div class="main-content">
         <Swiper></Swiper>
@@ -70,60 +71,66 @@
           </header>
         </Brand>
         <Category></Category>
-
-        
       </div>
     </div>
   </div>
 </template>
 <script>
 import Header from '../../components/Header/Header'
-import MsiteNav from '../../components/Home/MsiteNav/MsiteNav'
 import Swiper from '../../components/Home/Swiper/Swiper'
 import Main from '../../components/Home/Main/Main'
 import NewPeople from '../../components/Home/NewPeople/NewPeople'
 import Brand from '../../components/Home/Brand/Brand'
 import Category from '../../components/Home/Category/Category'
-
+import Shelter from '../Msite/Shelter/Shelter'
 import BScroll from 'better-scroll'
+import { mapState } from 'vuex'
 export default {
   components: {
     Header,
-    MsiteNav,
     Swiper,
     Main,
     NewPeople,
     Brand,
-    Category
+    Category,
+    Shelter
   },
-   data() {
+  data() {
     return {
       // isShowSearch :false // 默认不显示
+      // isShowList: true
     }
   },
   methods: {
-    isCloseSearch(){
+    goSearch() {
       this.$router.push('/Search')
+    },
+    goLogin() {
+      this.$router.push('/person')
     }
   },
   mounted() {
+    // this.$store.dispatch('getGoods')
+    // console.log($store)
+    this.$store.dispatch('getGoods')
+    // console.log(result2)
     const height = document.documentElement.clientHeight
     const main = document.querySelector('.main')
-    console.log(main)
+    // console.log(main)
     main.style.height = height + 'px'
-    console.log(height);
+    // console.log(height);
     new BScroll('.main', {
       scrollY: true,
       click: true
     })
+    // console.log(this.isShowList)
   }
 }
 </script>
 <style lang='stylus' rel='stylesheet/>stylus'>
-
 // .main
 
-//   height 600px
+// height 600px
 .main-content
-  padding-bottom 100px 
+  padding-bottom 100px
 </style>

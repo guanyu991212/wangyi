@@ -1,7 +1,7 @@
 <template>
   <div class="class">
     <Header>
-      <div class="search" slot="Header-content">
+      <div class="search" slot="Header-content" @click="goSearch">
         <i>
           <img
             src="../../../static/images/hxm_yanxuan-wap_p_20161201_style_img_icon-normal_search2-553dba3aff.png"
@@ -16,120 +16,17 @@
         <div class="class-left">
           <ul>
             <span class="hong">|</span>
-            <li class="item">
-              <a href="javascript::">推荐专区</a>
+            <li class="item"  v-for="(item ,index) in categorys" :key="index" >
+              <a href="javascript::">{{item.name}}</a>
             </li>
-            <li class="item">
-              <a href="javascript::">推荐专区</a>
-            </li>
-            <li class="item">
-              <a href="javascript::">推荐专区</a>
-            </li>
-            <li class="item">
-              <a href="javascript::">推荐专区</a>
-            </li>
-            <li class="item">
-              <a href="javascript::">推荐专区</a>
-            </li>
-            <li class="item">
-              <a href="javascript::">推荐专区</a>
-            </li>
-            <li class="item">
-              <a href="javascript::">推荐专区</a>
-            </li>
-            <li class="item">
-              <a href="javascript::">推荐专区</a>
-            </li>
-            <li class="item">
-              <a href="javascript::">推荐专区</a>
-            </li>
-            <li class="item">
-              <a href="javascript::">推荐专区</a>
-            </li>
-            <li class="item">
-              <a href="javascript::">推荐专区</a>
-            </li>
-            <li class="item">
-              <a href="javascript::">推荐专区</a>
-            </li>
+
           </ul>
         </div>
       </div>
-      <div class="class-right">
-        <div class="class-top">
-          <div class="swiper-container">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="../../../static/images/b0098527aac5942dfefc0efd9a27e4f6.jpg" alt />
-              </div>
-            </div>
-            <!-- 如果需要分页器 -->
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
+      
+  
 
-        <div class="class-scroll2">
-          <div class="class-bottom">
-            <ul class="list">
-              <li class="cateList">
-                <div class="cateImgWrapper">
-                  <img src="../../../static/images/71a5f1a0299e278f8193c193d8b7d1e4.png" alt />
-                </div>
-                <div>明星商品</div>
-              </li>
-
-              <li class="cateList">
-                <div class="cateImgWrapper">
-                  <img src="../../../static/images/71a5f1a0299e278f8193c193d8b7d1e4.png" alt />
-                </div>
-                <div>明星商品明星商品</div>
-              </li>
-              <li class="cateList">
-                <div class="cateImgWrapper">
-                  <img src="../../../static/images/71a5f1a0299e278f8193c193d8b7d1e4.png" alt />
-                </div>
-                <div>明星商品</div>
-              </li>
-              <li class="cateList">
-                <div class="cateImgWrapper">
-                  <img src="../../../static/images/71a5f1a0299e278f8193c193d8b7d1e4.png" alt />
-                </div>
-                <div>明星商品明星商品</div>
-              </li>
-              <li class="cateList">
-                <div class="cateImgWrapper">
-                  <img src="../../../static/images/71a5f1a0299e278f8193c193d8b7d1e4.png" alt />
-                </div>
-                <div>明星商品</div>
-              </li>
-              <li class="cateList">
-                <div class="cateImgWrapper">
-                  <img src="../../../static/images/71a5f1a0299e278f8193c193d8b7d1e4.png" alt />
-                </div>
-                <div>明星商品明星商品</div>
-              </li>
-              <li class="cateList">
-                <div class="cateImgWrapper">
-                  <img src="../../../static/images/71a5f1a0299e278f8193c193d8b7d1e4.png" alt />
-                </div>
-                <div>明星商品</div>
-              </li>
-              <li class="cateList">
-                <div class="cateImgWrapper">
-                  <img src="../../../static/images/71a5f1a0299e278f8193c193d8b7d1e4.png" alt />
-                </div>
-                <div>明星商品</div>
-              </li>
-              <li class="cateList">
-                <div class="cateImgWrapper">
-                  <img src="../../../static/images/71a5f1a0299e278f8193c193d8b7d1e4.png" alt />
-                </div>
-                <div>明星商品明星商品</div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -138,19 +35,22 @@ import Header from '../../components/Header/Header'
 import BScroll from 'better-scroll'
 import Swiper from 'swiper'
 import 'swiper/dist/css/swiper.css'
+import {mapState} from 'vuex'
 export default {
   components: {
     Header
   },
+  computed: {
+    ...mapState(['categorys'])
+  },
   mounted() {
+
+    this.$store.dispatch('getCategorys')
     new BScroll('.class-scroll1', {
       scrollX: true,
       click: true
     })
-    new BScroll('.class-scroll2', {
-      scrollX: true,
-      click: true
-    });
+   
     new Swiper ('.swiper-container', {
     
     loop: true, // 循环模式选项
@@ -161,7 +61,12 @@ export default {
     },
   });
 
-  }
+  },
+  methods: {
+    goSearch(){
+      this.$router.push('/search')
+    }
+  },
 }
 </script>
 <style lang='stylus' rel='stylesheet/>stylus'>
@@ -199,34 +104,34 @@ export default {
           white-space nowrap
           line-height 0.66667rem
           margin-top 0.53333rem
-    .class-right
-      margin-left 80px
-      padding 0.4rem 0.4rem 0.28rem
-      height 100%
-      overflow hidden
-      .class-top
-        img
-          width 264px
-          height 96px
-      .class-scroll2
-        // height 600px
-        float left
-        position absolute
-        .class-bottom
-          .list
-            .cateList
-              display inline-block
-              margin-right 16px
-              text-align center
-              width 1.92rem
-              vertical-align top
-              .cateImgWrapper
-                img
-                  width 72px
-                  height 72px
-                div
-                  color #333
-                  text-align center
-                  display block
-                  overflow hidden
+    // .class-right
+    //   margin-left 80px
+    //   padding 0.4rem 0.4rem 0.28rem
+    //   height 100%
+    //   overflow hidden
+    //   .class-top
+    //     img
+    //       width 264px
+    //       height 96px
+    //   .class-scroll2
+    //     // height 600px
+    //     float left
+    //     position absolute
+    //     .class-bottom
+    //       .list
+    //         .cateList
+    //           display inline-block
+    //           margin-right 16px
+    //           text-align center
+    //           width 1.92rem
+    //           vertical-align top
+    //           .cateImgWrapper
+    //             img
+    //               width 72px
+    //               height 72px
+    //             div
+    //               color #333
+    //               text-align center
+    //               display block
+    //               overflow hidden
 </style>

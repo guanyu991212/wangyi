@@ -17,11 +17,11 @@
 
     <div class="Main-item">
       <ul>
-        <li>
-          <img src="../../../../static/images/c6fd8835a6400b7da7a016ad85506b69.png" alt />
-          新品发布
+        <li v-for="(item,index) in goods.item" :key="index">
+          <img :src="item.img" alt />
+          {{item.title}}
         </li>
-        <li>
+        <!-- <li>
           <img src="../../../../static/images/c6fd8835a6400b7da7a016ad85506b69.png" alt />
           新品发布
         </li>
@@ -55,13 +55,18 @@
         <li>
           <img src="../../../../static/images/c6fd8835a6400b7da7a016ad85506b69.png" alt />
           新品发布
-        </li>
+        </li> -->
       </ul>
     </div>
   </div>
 </template>
 <script>
-export default {}
+import {mapState} from 'vuex'
+export default {
+  computed: {
+    ...mapState(['goods'])
+  },
+}
 </script>
 <style lang='stylus' rel='stylesheet/>stylus'>
 .Main
